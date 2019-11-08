@@ -12,7 +12,7 @@ RUN chown -R ${NB_UID} ${HOME}
 
 USER ${NB_USER}
 
-RUN pip install --upgrade bamboolib --extra-index-url http://dev-bamboolib-wheels.s3-website.eu-central-1.amazonaws.com/ --trusted-host dev-bamboolib-wheels.s3-website.eu-central-1.amazonaws.com
+RUN pip install 'bamboolib>=0.0.26'
 RUN jupyter nbextension enable --py qgrid --sys-prefix && \
     jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     jupyter nbextension install --py bamboolib --sys-prefix && \
